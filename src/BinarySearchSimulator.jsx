@@ -38,7 +38,7 @@ const BinarySearchSimulator = () => {
     }
 
     try {
-      const response = await axios.post(`${backend_url}start`, {
+      const response = await axios.post(`${backend_url}start-BS`, {
         array,
         target,
       });
@@ -58,7 +58,7 @@ const BinarySearchSimulator = () => {
 
   const stepSearch = async () => {
     try {
-      const response = await axios.post(`${backend_url}step`, {});
+      const response = await axios.post(`${backend_url}step-BS`, {});
       const { left, right, mid, found } = response.data;
       setLeft(left);
       setRight(right);
