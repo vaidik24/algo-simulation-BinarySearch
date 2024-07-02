@@ -5,12 +5,12 @@ const Visualization = ({ array, left, right, mid, target, found }) => {
   const isGrid = array.length > 12;
 
   return (
-    <div className="mt-8 flex flex-col items-center">
+    <div className="mt-3 flex flex-col items-center">
       <div className={`flex ${isGrid ? "flex-wrap justify-center" : ""}`}>
         {array.map((num, index) => (
           <motion.div
             key={index}
-            className={`relative ${isGrid ? "m-1" : "mx-0.5"}`}
+            className={`relative ${isGrid ? " m-0.5" : "mx-0"}`}
             animate={{
               scale:
                 index === mid || index === left || index === right ? 1.1 : 1,
@@ -59,12 +59,18 @@ const Visualization = ({ array, left, right, mid, target, found }) => {
       </div>
       {found !== null && (
         <motion.div
-          className="mt-6 text-lg font-semibold"
+          className="mt-2 text-lg font-semibold"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {found ? `Target ${target} found at index ${mid}` : ""}
+          {!found && mid == -1
+            ? "Target not found in the array"
+            : mid == -1
+            ? console.log("found: ", found)
+            : found
+            ? `Target ${target} found at index ${mid}`
+            : ""}
           {right < 0 ||
           right >= array.length ||
           left < 0 ||

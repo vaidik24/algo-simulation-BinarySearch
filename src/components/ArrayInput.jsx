@@ -17,17 +17,19 @@ const ArrayInput = ({ onStart, array, target }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between w-full">
-      <motion.h1
-        className="text-4xl font-extrabold mb-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 z-10"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, type: "spring" }}
-      >
-        Binary Search Simulator
-      </motion.h1>
+    <div className="bg-white rounded-lg shadow-lg p-1 flex flex-col justify-between w-full">
+      <div className=" flex items-center justify-center">
+        <motion.h1
+          className=" text-2xl font-extrabold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 z-10"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: "spring" }}
+        >
+          Binary Search Simulator
+        </motion.h1>
+      </div>
       <div>
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">
+        <h2 className="text-lg font-bold mb-2 text-gray-800">
           Setup Binary Search
         </h2>
         <div className="mb-4">
@@ -43,7 +45,7 @@ const ArrayInput = ({ onStart, array, target }) => {
             placeholder="e.g., 1,3,5,7,9"
             value={inputArray}
             onChange={(e) => setInputArray(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+            className="w-full p-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
             whileFocus={{ scale: 1.02 }}
           />
         </div>
@@ -60,17 +62,19 @@ const ArrayInput = ({ onStart, array, target }) => {
             placeholder="e.g., 5"
             value={inputTarget}
             onChange={(e) => setInputTarget(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+            className="w-full p-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
             whileFocus={{ scale: 1.02 }}
           />
         </div>
       </div>
-      <motion.button
-        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-1000 transform"
-        onClick={handleStart}
-      >
-        Start Binary Search
-      </motion.button>
+      <div className=" flex items-center justify-center">
+        <motion.button
+          className="w-fit bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-2 px-2 rounded-lg transition duration-1000 transform"
+          onClick={handleStart}
+        >
+          Start Binary Search
+        </motion.button>
+      </div>
     </div>
   );
 };

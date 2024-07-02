@@ -8,6 +8,7 @@ import "./index.css";
 
 const BinarySearchSimulator = () => {
   const backend_url = "https://algo-simulation-backend.onrender.com/";
+  // const backend_url = "http://localhost:6969/";
   const [array, setArray] = useState([]);
   const [target, setTarget] = useState(null);
   const [left, setLeft] = useState(0);
@@ -60,6 +61,7 @@ const BinarySearchSimulator = () => {
     try {
       const response = await axios.post(`${backend_url}step-BS`, {});
       const { left, right, mid, found } = response.data;
+      console.log(response.data);
       setLeft(left);
       setRight(right);
       setMid(mid);
@@ -70,11 +72,11 @@ const BinarySearchSimulator = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-custom-bg bg-cover bg-center bg-opacity-5">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-purple-600 bg-cover bg-center bg-opacity-5 ">
       <div className="absolute inset-0 bg-black opacity-60"></div>
       {error && (
         <motion.div
-          className="text-red-500 mb-4 p-3 bg-red-100 rounded-md shadow z-10"
+          className="text-red-500 mb-4 p-1 bg-red-100 rounded-md shadow z-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
@@ -83,9 +85,9 @@ const BinarySearchSimulator = () => {
         </motion.div>
       )}
 
-      <div className="w-full max-w-4xl z-10">
+      <div className="w-full max-w-3xl z-10">
         <motion.div
-          className="w-full mb-8"
+          className="w-full mb-2"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -94,7 +96,7 @@ const BinarySearchSimulator = () => {
         </motion.div>
         {started && (
           <motion.div
-            className="w-full bg-white rounded-lg shadow-lg p-6"
+            className="w-full bg-white rounded-lg shadow-lg p-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
