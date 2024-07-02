@@ -64,11 +64,9 @@ const Visualization = ({ array, left, right, mid, target, found }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {!found && mid == -1
+          {found === false && mid === -1
             ? "Target not found in the array"
-            : mid == -1
-            ? console.log("found: ", found)
-            : found
+            : found === true
             ? `Target ${target} found at index ${mid}`
             : ""}
           {right < 0 ||

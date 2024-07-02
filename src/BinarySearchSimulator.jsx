@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 import "./index.css";
 
 const BinarySearchSimulator = () => {
-  const backend_url = "https://algo-simulation-backend.onrender.com/";
-  // const backend_url = "http://localhost:6969/";
+  // const backend_url = "https://algo-simulation-backend.onrender.com/";
+  const backend_url = "http://localhost:6969/";
   const [array, setArray] = useState([]);
   const [target, setTarget] = useState(null);
   const [left, setLeft] = useState(0);
