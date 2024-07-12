@@ -109,7 +109,7 @@ const BinarySearchSimulator = () => {
               target={target}
               found={found}
             />
-            <ControlPanel onStep={stepSearch} />
+            {!found && <ControlPanel onStep={stepSearch} />}
           </motion.div>
         )}
       </div>
